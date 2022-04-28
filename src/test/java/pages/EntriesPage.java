@@ -13,12 +13,7 @@ public class EntriesPage extends BasePage {
     private By NEW_ENTRY = By.xpath("//*[contains(text(), 'My first entry')]");
     private By NO_ENTRIES_FOUND = By.xpath("//div[@class='none centered']");
     private By SAVE_NEW_ENTRY_BUTTON = By.cssSelector(".cke_button");
-    private By SELECT_LAST_CHECKBOX = By.cssSelector("input[ng-model='model.checked[entry.id]']");
     private By SELECT_ALL_CHECKBOXES = By.cssSelector("input[ng-model='model.allChecked']");
-    private By SEARCH_FIELD = By.id("appendedInputButton");
-    private By BOLD_STYLE = By.cssSelector(".cke_button_icon.cke_button__bold_icon");
-    private By NUM_STYLE = By.cssSelector(".cke_button_icon.cke_button__numberedlist_icon");
-    private By MAXIMIZED_STYLE = By.cssSelector(".cke_button_icon.cke_button__simplemaximize_icon");
     private By LOGOUT_LINK = By.cssSelector("button[ng-click='logout($event)']");
 
     public EntriesPage(WebDriver driver) {
