@@ -15,6 +15,7 @@ public class LogoutTest extends BaseTest {
         loginPage.openLoginPage();
         LOGGER.info("Authorization with user and password");
         loginPage.login(user, password);
+        loginPage.checkDonationAlert();
         LOGGER.info("Click Logout link");
         entriesPage.clickLogoutLink();
         LOGGER.info("Check back to Login page");
