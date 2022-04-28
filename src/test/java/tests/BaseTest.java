@@ -3,15 +3,15 @@ package tests;
 import factorydriver.DriverFactory;
 import factorydriver.DriverManager;
 import factorydriver.DriverType;
+import models.EntryFaker;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.EntriesPage;
 import pages.LoginPage;
 import utilities.PropertiesManager;
+import utilities.TestListener;
 
+@Listeners(TestListener.class)
 public class BaseTest {
 
     PropertiesManager propertiesManager = new PropertiesManager();
@@ -22,6 +22,8 @@ public class BaseTest {
     DriverManager driverManager;
     LoginPage loginPage;
     EntriesPage entriesPage;
+    EntryFaker faker = new EntryFaker();
+    String entryTextFaker = faker.RandomEntryText();
 
     @BeforeClass
     public void setUp() {
