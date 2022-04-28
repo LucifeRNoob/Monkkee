@@ -24,7 +24,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @Description("Сheck the error message when entering only the user")
-    public void loginOnlyWithUser() {
+    public void loginOnlyWithUserTest() {
         LOGGER.info("Opening login page");
         loginPage.openLoginPage();
         LOGGER.info("Authorization attempt with only user");
@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @Description("Сheck the error message when entering only the password")
-    public void loginOnlyWithPassword() {
+    public void loginOnlyWithPasswordTest() {
         LOGGER.info("Opening login page");
         loginPage.openLoginPage();
         LOGGER.info("Authorization attempt with only password");
