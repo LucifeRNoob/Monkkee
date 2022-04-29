@@ -161,4 +161,4 @@ buildNumber.properties
 /allure-results/
 /logs/
 
-/src/test/resources/config.properties
+
