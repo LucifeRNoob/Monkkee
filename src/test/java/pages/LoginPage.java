@@ -51,7 +51,7 @@ public class LoginPage extends BasePage {
     @Step("Check donation alert and press 'Cancel' button")
     public void checkDonationAlert() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+            WebDriverWait wait = new WebDriverWait(driver, 7);
             WebElement cancelButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Cancel']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cancelButton);
             cancelButton.click();
