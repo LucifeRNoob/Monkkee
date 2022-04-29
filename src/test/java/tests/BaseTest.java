@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.EntriesPage;
 import pages.LoginPage;
+import pages.SettingPage;
 import utilities.PropertiesManager;
 import utilities.TestListener;
 
@@ -22,6 +23,7 @@ public class BaseTest {
     DriverManager driverManager;
     LoginPage loginPage;
     EntriesPage entriesPage;
+    SettingPage settingPage;
     EntryFaker faker = new EntryFaker();
     String entryTextFaker = faker.RandomEntryText();
 
@@ -35,6 +37,7 @@ public class BaseTest {
         driverManager.setTimeout();
         loginPage = new LoginPage(driver);
         entriesPage = new EntriesPage(driver);
+        settingPage = new SettingPage(driver);
     }
 
     public WebDriver getDriver() {

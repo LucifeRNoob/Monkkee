@@ -5,12 +5,13 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.RetryAnalyzer;
 
 public class CreateEntryTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(CreateEntryTest.class.getName());
 
-    @Test(priority = 1)
+    @Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
     @Description("Creating a new entry")
     public void createNewEntryTest() {
         LOGGER.info("Opening login page");

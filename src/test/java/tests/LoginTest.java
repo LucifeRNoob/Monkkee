@@ -5,13 +5,14 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.RetryAnalyzer;
 
 
 public class LoginTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(LoginTest.class.getName());
 
-    @Test(priority = 1)
+    @Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
     @Description("Check login with valid user and password")
     public void loginTest() {
         LOGGER.info("Opening login page");

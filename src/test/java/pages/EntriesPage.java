@@ -15,6 +15,7 @@ public class EntriesPage extends BasePage {
     private By SAVE_NEW_ENTRY_BUTTON = By.cssSelector(".cke_button");
     private By SELECT_ALL_CHECKBOXES = By.cssSelector("input[ng-model='model.allChecked']");
     private By LOGOUT_LINK = By.cssSelector("button[ng-click='logout($event)']");
+    private By SETTINGS_LINK = By.cssSelector(".icon-cog.icon-light");
 
     public EntriesPage(WebDriver driver) {
         super(driver);
@@ -63,6 +64,9 @@ public class EntriesPage extends BasePage {
         return driver.findElement(NO_ENTRIES_FOUND).getText();
     }
 
-
+    @Step("Open settings")
+    public void openSettings() {
+        driver.findElement(SETTINGS_LINK).click();
     }
+}
 

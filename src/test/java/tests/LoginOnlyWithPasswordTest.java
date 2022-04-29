@@ -5,12 +5,13 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.RetryAnalyzer;
 
 public class LoginOnlyWithPasswordTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(LoginOnlyWithPasswordTest.class.getName());
 
-    @Test(priority = 3)
+    @Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
     @Description("Сheck the error message when entering only the password")
     public void loginOnlyWithPasswordTest() {
         LOGGER.info("Opening login page");

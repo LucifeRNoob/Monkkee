@@ -5,12 +5,13 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.RetryAnalyzer;
 
 public class DeleteAllEntriesTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(DeleteAllEntriesTest.class.getName());
 
-    @Test(priority = 2)
+    @Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
     @Description("Creating new entries and deleting all")
     public void deleteAllEntriesTest() {
         LOGGER.info("Opening login page");
