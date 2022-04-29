@@ -9,7 +9,7 @@ public class LogoutTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(LogoutTest.class.getName());
 
-    @Test
+    @Test(priority = 3)
     public void logoutTest() {
         LOGGER.info("Opening login page");
         loginPage.openLoginPage();
