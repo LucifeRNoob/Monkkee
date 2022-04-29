@@ -160,5 +160,5 @@ buildNumber.properties
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,intellij
 /allure-results/
 /logs/
-
+src/test/resources/config.properties
 
