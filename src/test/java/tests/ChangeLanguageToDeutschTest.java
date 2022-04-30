@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -12,8 +13,9 @@ public class ChangeLanguageToDeutschTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(ChangeLanguageToDeutschTest.class.getName());
 
-    @Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
-    @Description("Try to change language to Deutsch")
+    @Test(priority = 4, retryAnalyzer = RetryAnalyzer.class)
+    @Owner(value = "Andrey Kremenevskiy")
+    @Description(value = "Try to change language to Deutsch")
     public void ChangeLanguageToDeutschTest() {
         LOGGER.info("Opening login page");
         loginPage.openLoginPage();
@@ -26,12 +28,10 @@ public class ChangeLanguageToDeutschTest extends BaseTest{
         settingPage.setLanguage("de");
         LOGGER.info("Check that language changed");
         Assert.assertEquals(settingPage.changeLanguageToDeutsch(),"Deine Spracheinstellung wurde erfolgreich geändert","Language was not changed");
-
         }
 
     @AfterMethod
     public void backToEnglish(){
         settingPage.setLanguage("en");
-
     }
 }

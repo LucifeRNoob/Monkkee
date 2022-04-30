@@ -10,7 +10,6 @@ public class SettingPage extends BasePage {
 
     private By DROPDOWN = By.name("selectLocale");
     private By EN = By.xpath("//*[contains(text(), 'Language selection')]");
-    private By SETTINGS_MENU = By.id("settings-menu");
     private By MENU_PASS = By.cssSelector("[ng-class=\"cssClass('password')\"]");
     private By OLD_PASS = By.id("old-password");
     private By NEW_PASS = By.id("password");
@@ -18,6 +17,7 @@ public class SettingPage extends BasePage {
     private By NEW_HINT = By.id("password-hint");
     private By PASS_CHANGED = By.xpath("//*[contains(text(), 'Your password has been changed successfully')]");
     private By CONFIRM = By.cssSelector(".alert");
+    private By OK_BUTTON = By.xpath("//div[@class='btn-text-content']");
 
 
     public SettingPage(WebDriver driver) {
@@ -41,4 +41,21 @@ public class SettingPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(CONFIRM)).getText();
     }
 
+    @Step("Open Change password in settings")
+    public void openChangePasswordOption() {
+        driver.findElement(MENU_PASS).click();
+    }
+
+    @Step("Changing the password to a new one")
+    public void changePasswordOption(String password) {
+        driver.findElement(OLD_PASS).sendKeys(password);
+        driver.findElement(NEW_PASS).sendKeys(password);
+        driver.findElement(NEW_CONF).sendKeys(password);
+        driver.findElement(OK_BUTTON).click();
+    }
+
+    @Step("Сheck if you received a password change message")
+    public String getMessageAboutChangingPassword() {
+        return driver.findElement(PASS_CHANGED).getText();
+    }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Regression suite" parallel="tests">
+    <test name="Login tests">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.LoginOnlyWithUserTest"/>
+            <class name="tests.LoginOnlyWithPasswordTest"/>
+        </classes>
+    </test>
+    <test name="Entries tests">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.CreateEntryTest"/>
+            <class name="tests.CreateNewEntryAndDeletingTest"/>
+            <class name="tests.DeleteAllEntriesTest"/>
+        </classes>
+    </test>
+    <test name="Settings tests">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.SettingsPageShouldOpenTest"/>
+            <class name="tests.ChangePasswordOptionTest"/>
+            <class name="tests.ChangeLanguageToDeutschTest"/>
+        </classes>
+    </test>
+    <test name="Logout test">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.LogoutTest"/>
+        </classes>
+    </test>
+</suite>

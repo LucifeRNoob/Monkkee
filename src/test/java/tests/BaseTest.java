@@ -12,6 +12,8 @@ import pages.SettingPage;
 import utilities.PropertiesManager;
 import utilities.TestListener;
 
+import java.net.MalformedURLException;
+
 @Listeners(TestListener.class)
 public class BaseTest {
 
@@ -28,9 +30,17 @@ public class BaseTest {
     String entryTextFaker = faker.RandomEntryText();
 
     @BeforeClass
-    public void setUp() {
+    @Parameters({"browser"})
+    public void setUp(@Optional("chrome") String browser) throws MalformedURLException {
         DriverFactory factory = new DriverFactory();
-        driverManager = factory.getManager(DriverType.CHROME);
+        DriverType driverType = null;
+        if(browser.equals("chrome")) {
+            driverType = DriverType.CHROME;
+        }
+        else if(browser.equals("firefox")){
+            driverType = DriverType.MOZILLA;
+        }
+        driverManager = factory.getManager(driverType);
         driverManager.createDriver();
         driver = driverManager.getDriver();
         driverManager.maximize();

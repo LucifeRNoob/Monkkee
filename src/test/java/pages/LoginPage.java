@@ -45,7 +45,7 @@ public class LoginPage extends BasePage {
 
     @Step("Login button is displayed")
     public boolean loginButtonIsDisplayed() {
-        return driver.findElement(LOGIN_BUTTON).isDisplayed();
+        return driver.findElement(USER_FIELD).isDisplayed();
     }
 
     @Step("Check donation alert and press 'Cancel' button")

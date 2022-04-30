@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -11,6 +13,8 @@ public class LogoutTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(LogoutTest.class.getName());
 
     @Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
+    @Owner(value = "Andrey Kremenevskiy")
+    @Description(value = "Logout performance")
     public void logoutTest() {
         LOGGER.info("Opening login page");
         loginPage.openLoginPage();
