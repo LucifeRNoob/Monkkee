@@ -20,7 +20,6 @@ public class LoginOnlyWithPasswordTest extends BaseTest{
         loginPage.openLoginPage();
         LOGGER.info("Authorization attempt with only password");
         loginPage.login("", password);
-        loginPage.checkDonationAlert();
         LOGGER.info("Checking that error message is shown");
         Assert.assertEquals(loginPage.emptyPassword(),"Mandatory field","Message is not shown");
     }

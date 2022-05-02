@@ -12,7 +12,7 @@ public class DeleteAllEntriesTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(DeleteAllEntriesTest.class.getName());
 
-    @Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority = 2, retryAnalyzer = RetryAnalyzer.class, description = "Creating new entries and deleting all")
     @Owner(value = "Andrey Kremenevskiy")
     @Description(value = "Creating new entries and deleting all")
     public void deleteAllEntriesTest() {

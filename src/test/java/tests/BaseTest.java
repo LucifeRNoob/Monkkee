@@ -7,6 +7,7 @@ import models.EntryFaker;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.EntriesPage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.SettingPage;
 import utilities.PropertiesManager;
@@ -26,6 +27,7 @@ public class BaseTest {
     LoginPage loginPage;
     EntriesPage entriesPage;
     SettingPage settingPage;
+    HomePage homePage;
     EntryFaker faker = new EntryFaker();
     String entryTextFaker = faker.RandomEntryText();
 

@@ -20,7 +20,6 @@ public class LoginOnlyWithUserTest extends BaseTest {
         loginPage.openLoginPage();
         LOGGER.info("Authorization attempt with only user");
         loginPage.login(user, "");
-        loginPage.checkDonationAlert();
         LOGGER.info("Checking that error message is shown");
         Assert.assertEquals(loginPage.emptyUser(), "Mandatory field", "Message is not shown");
     }

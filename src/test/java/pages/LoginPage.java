@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
     private By REMINDER_LINK = By.xpath("//*[contains(text(), 'Send password reminder')]");
     private By REGISTER_LINK = By.xpath("//*[contains(text(), 'Register')]");
     private By MANDATORY_ERROR = By.xpath("//*[contains(text(), 'Mandatory field')]");
-
+    private By HOMEPAGE_LINK = By.xpath("//a[@href='https://www.monkkee.com/en/']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -46,6 +46,11 @@ public class LoginPage extends BasePage {
     @Step("Login button is displayed")
     public boolean loginButtonIsDisplayed() {
         return driver.findElement(USER_FIELD).isDisplayed();
+    }
+
+    @Step("Click Homepage link")
+    public void clickHomepage() {
+        driver.findElement(REMINDER_LINK).click();
     }
 
     @Step("Check donation alert and press 'Cancel' button")

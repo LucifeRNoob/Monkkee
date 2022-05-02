@@ -1,8 +1,9 @@
 package pages;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EntriesPage extends BasePage {
 
@@ -67,6 +68,17 @@ public class EntriesPage extends BasePage {
     @Step("Open settings")
     public void openSettings() {
         driver.findElement(SETTINGS_LINK).click();
+    }
+
+    @Step("Check donation alert and press 'Logout' button")
+    public void checkDonationAlert() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 7);
+            WebElement cancelButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Log out']")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cancelButton);
+            cancelButton.click();
+        } catch (NoSuchElementException | TimeoutException exception) {
+        }
     }
 }
 

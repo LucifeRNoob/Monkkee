@@ -30,7 +30,7 @@ public class ChangeLanguageToDeutschTest extends BaseTest{
         Assert.assertEquals(settingPage.changeLanguageToDeutsch(),"Deine Spracheinstellung wurde erfolgreich geändert","Language was not changed");
         }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void backToEnglish(){
         settingPage.setLanguage("en");
     }

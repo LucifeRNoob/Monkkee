@@ -12,7 +12,7 @@ public class LogoutTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(LogoutTest.class.getName());
 
-    @Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority = 4, retryAnalyzer = RetryAnalyzer.class)
     @Owner(value = "Andrey Kremenevskiy")
     @Description(value = "Logout performance")
     public void logoutTest() {
@@ -23,6 +23,7 @@ public class LogoutTest extends BaseTest {
         loginPage.checkDonationAlert();
         LOGGER.info("Click Logout link");
         entriesPage.clickLogoutLink();
+        entriesPage.checkDonationAlert();
         LOGGER.info("Check back to Login page");
         Assert.assertTrue(loginPage.loginButtonIsDisplayed(), "Login page is not opened");
     }
