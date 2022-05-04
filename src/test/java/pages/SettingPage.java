@@ -19,7 +19,6 @@ public class SettingPage extends BasePage {
     private By CONFIRM = By.cssSelector(".alert");
     private By OK_BUTTON = By.xpath("//div[@class='btn-text-content']");
 
-
     public SettingPage(WebDriver driver) {
         super(driver);
     }

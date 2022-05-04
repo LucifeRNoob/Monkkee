@@ -62,7 +62,6 @@ public class HomePage extends BasePage {
     public boolean titleTeamVisible() {
         return driver.findElement(TEAM_TITLE).isDisplayed();
     }
-
 }
 
 

@@ -24,6 +24,8 @@ public class EntriesPage extends BasePage {
     private By CLICK_BUTTON_OK_IMG_PROPERTIES = By.xpath("//div[@class='cke_dialog_body']//span[text()='OK']");
     private By IMAGE_VISIBILITY = By.xpath("//img[@src='https://img-host.su/MW6Sm.png']");
     private By HOME_BUTTON = By.xpath("//i[@class='icon-home']");
+    private By BUTTON_MANAGER_TAGS = By.xpath("//section[@id='tags']//a[text()='Manage tags']");
+    private By INPUT_TAG_NAME = By.xpath("//input[@id='new-tag']");
 
     public EntriesPage(WebDriver driver) {
         super(driver);
@@ -126,6 +128,11 @@ public class EntriesPage extends BasePage {
     @Step("Click 'Home' button")
     public void clickHomeButton() {
         driver.findElement(HOME_BUTTON).click();
+    }
+
+    @Step("Click on button manager tags and open setting tags.")
+    public void clickOnButtonManagerTags() {
+        driver.findElement(BUTTON_MANAGER_TAGS).click();
     }
 }
 
