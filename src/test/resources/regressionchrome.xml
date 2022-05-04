@@ -15,6 +15,7 @@
             <class name="tests.CreateEntryTest"/>
             <class name="tests.CreateNewEntryAndDeletingTest"/>
             <class name="tests.DeleteAllEntriesTest"/>
+            <class name="tests.AddImageTest"/>
         </classes>
     </test>
     <test name="Settings tests">
